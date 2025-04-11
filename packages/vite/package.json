@@ -1,11 +1,21 @@
 {
   "name": "vite",
   "version": "0.0.0",
-  "main": "dist/index.js",
+  "main": "./dist/node/index.js",
   "type": "module",
   "bin": {
-    "vite": "bin/vite.js"
+    "vite": "bin/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/node/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsx scripts/dev.ts"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "source-map-support": "^0.5.21"
+  }
 }
